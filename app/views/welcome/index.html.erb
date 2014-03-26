@@ -1,0 +1,17 @@
+<% if user_signed_in? %>
+  <div style="display: inline"><%=link_to 'Sign out', destroy_user_session_path, :method => :delete %> |
+    Signed in as... <%= current_user.email %></div>
+
+ <% else %>
+   Not signed in. Time to sign in!
+   <%=link_to 'Sign in', new_user_session_path, :method => :get %>
+  <% end %>
+
+ <div>
+
+   <h3>
+   	Check out our wide selection of 
+   	<%= link_to 'Gadgets', gadgets_path %>.
+   </h3>
+
+ </div>
